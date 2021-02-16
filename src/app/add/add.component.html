@@ -1,0 +1,79 @@
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<select  (click)='get_event_target($event.target.value)' id="select">
+    <option  >select</option>
+    <option >
+ Category
+    </option>
+    <option >
+    Category 1
+    </option>
+    <option>
+        Category 2
+        </option>
+        <option> 
+           Category 3
+            </option>
+
+
+</select>
+<table class="table stripped" border="1">
+   
+    <tr  *ngFor='let item of products; let  i =index' >
+        <td  [style]='hidden'  *ngIf='boolean[i]' [ngStyle]="{ color: item.price> 500 ? 'red' : 'grey' }" >  {{item.id}}name=  {{item.name}}price= {{item.price}}<button  *ngIf='boolean[i]'  (click)='delete(i)'>delete</button></td>
+        <!--Условие, которое в задании 1, я прописала в [ngStyle]-->
+    </tr>
+</table>
+<br/>
+<!--Выпадающий список value(Category)-->
+<label>
+<select  (change)="onChange($event.target.value)">
+    <option>select</option>
+<option>
+all_values
+</option>
+<option >
+    value1
+</option>
+<option>
+    value2
+    </option>
+    <option>
+        value3
+        </option>
+</select>
+</label>
+<select ><option>press for watch items</option>
+             
+        <option  *ngFor="let v of value.value1; let i=index" [ngStyle]="{
+            color:v.price>=500?'red':'black'}" [style]="style.value1" >
+{{v.id}}{{v.name}}{{v.price}}
+    </option>
+    <option [ngStyle]="{
+        color:j.price>=500?'red':'black'}" [style]="style.value2"  *ngFor="let j of value.value2" > 
+     {{j.id}}{{j.name}}{{j.price}}
+            </option>
+            <option [ngStyle]="{
+                color:n.price>=500?'red':'black'}" [style]="style.value3"  *ngFor="let n of value.value3" >  
+              {{n.id}}{{n.name}}{{n.price}} 
+                    </option>
+
+                    <option [ngStyle]="{
+                        color:i.price>=500?'red':'black'}"  [style]='style.all_values' *ngFor="let i of products" >{{i.id}}{{i.name}}{{i.price}}</option>
+
+
+                
+ 
+        
+                    
+  </select>
+<h3>Insert some text</h3>
+<user [styles]="variable" (input)="variable=$event.target.value"  (something)='changess(variable)' ></user>
+<p>{{variable}}</p>
+  
+
+
+

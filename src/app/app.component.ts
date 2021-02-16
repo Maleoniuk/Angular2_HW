@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
+
+import { AddComponent } from './add/add.component';
+
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +11,33 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'row';
-}
+ 
+x;
+
+  @ViewChild(AddComponent)
+  childComponent:AddComponent
+ Method() {
+    this.childComponent.delete(this.x)
+ 
+ }
+
+
+
+
+  constructor(){}
+ 
+  
+  
+    ngOnInit() {
+  
+  
+  
+     
+    
+   
+  
+    }
+  
+  
+  }
+  
